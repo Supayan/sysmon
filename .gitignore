@@ -1,0 +1,7 @@
+# Compiled output
+sysmon
+*.o
+
+# Editor clutter
+.vscode/
+*.swp
