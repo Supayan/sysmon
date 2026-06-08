@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include "../include/cpu.h"
+#include "../include/memory.h"
 
 
 int main()
@@ -17,5 +18,13 @@ int main()
     long idle_delta = cal_idle_delta(&stat1, &stat2);
     cpu_time = total_cpu_usage(total_delta,idle_delta);
     printf("\n cpu : %.2f%%\n", cpu_time);
+
+
+    MemStat memory_status;
+    read_mem_stat(&memory_status);
+
+    printf("\n Memory used %% : %.2f%%\n",mem_percentage(&memory_status));
+    printf("\n Swap used %% : %.2f%%\n",swap_percentage(&memory_status));
+
     return 0;
 }
