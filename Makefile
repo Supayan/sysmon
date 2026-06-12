@@ -6,11 +6,18 @@ OBJ = $(SRC:.c=.o)
 TARGET = sysmon
 
 all: $(TARGET)
+
 $(TARGET): $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^ $(LIBS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+setup:
+	@chmod +x setup.sh
+	@./setup.sh
+
 clean:
-	rm -f $(OBJ) $(TARGET)	
+	rm -f $(OBJ) $(TARGET)
+
+.PHONY: all setup clean	
