@@ -19,7 +19,8 @@ elif command -v yum &> /dev/null; then
     # RedHat/CentOS/Fedora
     echo "Detected RedHat-based system"
     echo "Installing dependencies: gcc, make, ncurses-devel..."
-    sudo yum groupinstall -y "Development Tools"
+    sudo yum groupinstall -y "Development Tools" 2>/dev/null || \
+    sudo yum install -y gcc make ncurses-devel
     sudo yum install -y ncurses-devel
 
 elif command -v pacman &> /dev/null; then
