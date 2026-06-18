@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include "../include/cpu.h"
 #include "../include/memory.h"
+#include "../include/disk.h"
 
 
 int main()
@@ -25,6 +26,10 @@ int main()
 
     printf("\n Memory used %% : %.2f%%\n",mem_percentage(&memory_status));
     printf("\n Swap used %% : %.2f%%\n",swap_percentage(&memory_status));
+
+    DiskStat ds[10];
+    int count =0; 
+    read_disk_stat(ds, &count);
 
     return 0;
 }
