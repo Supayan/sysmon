@@ -1,3 +1,7 @@
+#ifndef MEMORY_H
+#define MEMORY_H
+
+
 typedef struct 
 {
     unsigned long memtotal;
@@ -13,3 +17,5 @@ long mem_used_cal(MemStat *m);
 double mem_percentage(MemStat *m);
 long swap_cal (MemStat *m);
 double swap_percentage(MemStat *m);
+
+#endif

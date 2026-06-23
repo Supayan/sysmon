@@ -18,7 +18,7 @@ void read_mem_stat(MemStat *m)
     }
     while (fgets(data, sizeof(data), fp) != NULL)
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < (int)(sizeof(arr)/sizeof(arr[0])); i++)
         {
             if (strncmp(data, arr[i], strlen(arr[i])) == 0)
             {
